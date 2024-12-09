@@ -1,0 +1,77 @@
+<nav style="margin: auto" class="navbar navbar-expand-lg text-bg-success">
+  <a style="color: rgb(255, 205, 205)" class="navbar-brand" href="#"
+    >AR GRROUPS OF MULTISPECIALITY HOSPITAL</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="mx-2">
+      <button
+        style="margin: 5px"
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#loginModal"
+      >
+        <a
+          style="color: white"
+          href="javascript:void(0);"
+          routerLink="/appointment"
+          >BACK</a
+        >
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h2 class="text-center">Add new Appointments</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="enter your full name"
+        [(ngModel)]="appointment.name"
+      />
+      <label>Age</label>
+      <input
+        type="text"
+        class="form-control"
+        id="age"
+        name="age"
+        placeholder="enter your age"
+        [(ngModel)]="appointment.age"
+      />
+      <label>Symptoms</label>
+      <input
+        type="text"
+        class="form-control"
+        id="symptoms"
+        name="symptoms"
+        placeholder="enter your symptoms"
+        [(ngModel)]="appointment.symptoms"
+      />
+      <label>Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="number"
+        name="number"
+        placeholder="enter your mobile number"
+        [(ngModel)]="appointment.number"
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

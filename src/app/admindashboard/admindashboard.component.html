@@ -1,0 +1,92 @@
+<nav style="margin: auto" class="navbar navbar-expand-lg text-bg-success">
+  <a style="color: rgb(255, 205, 205)" class="navbar-brand" href="#"
+    >AR GRROUPS OF MULTISPECIALITY HOSPITAL</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a
+          style="color: white"
+          class="nav-link active"
+          aria-current="page"
+          href="javascript:void(0);"
+          routerLink="/appointment"
+          >APPOINTMENTS</a
+        >
+      </li>
+    </ul>
+
+    <div class="mx-2">
+      <button
+        style="margin: 5px"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#loginModal"
+      >
+        <a style="color: white" href="javascript:void(0);" routerLink="/home"
+          >Logout</a
+        >
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <hr />
+  <h2 style="text-align: center; margin-top: 20px">Admin Dashboard</h2>
+  <a style="color: rgb(86, 86, 86); font-size: x-large"
+    ><marquee class="text-bg-success" behavior="scroll" direction="left">
+      Welcome to Admin Dashboard. Please find the patient list below!!. Click
+      Appointments to view and update Appointments, Click Add Appointment to add
+      new Appointment</marquee
+    ></a
+  >
+  <hr />
+  <input type="text" name="search" placeholder="Search" />
+  <br />
+  <a style="color: rgb(86, 86, 86); font-size: xx-large"
+    >Current Patient List in the Queue</a
+  >
+  <div class="tableFixHead">
+    <br />
+    <div class="container">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Fees</th>
+            <th>Urgency</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients">
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.age }}</td>
+            <td>{{ patient.fees }}</td>
+            <td>{{ patient.urgency }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(patient.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
